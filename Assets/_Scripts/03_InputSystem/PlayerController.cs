@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 	public float moveSpeed = 5f;
+	public float jumpingForce = 10f;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +15,7 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown("space")) {
 			// JUMP
-			Debug.Log("SPACE BAR!");
+			GetComponent<Rigidbody>().AddForce(0 , jumpingForce, 0);
 		}
 
 		if (Input.GetKey("left"))	{

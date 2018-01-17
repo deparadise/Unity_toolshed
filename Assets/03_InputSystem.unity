@@ -123,8 +123,8 @@ GameObject:
   - component: {fileID: 454288279}
   - component: {fileID: 454288278}
   - component: {fileID: 454288277}
-  - component: {fileID: 454288276}
   - component: {fileID: 454288275}
+  - component: {fileID: 454288276}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  jumpingForce: 300
 --- !u!23 &454288277
 MeshRenderer:
   m_ObjectHideFlags: 0
