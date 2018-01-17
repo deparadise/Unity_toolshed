@@ -21,12 +21,14 @@ public class PlayerController : MonoBehaviour {
 
 		if (Input.GetKey("up")) {
 			// advance
-			transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
+			// transform.position += Vector3.forward * moveSpeed * Time.deltaTime; // Constant GLOBAL z
+			transform.position += transform.forward * moveSpeed * Time.deltaTime; // LOCAL Forward vector of GO
 		}
 
 		if (Input.GetKey("down")) {
 			// withdraw
-			transform.position += Vector3.back * moveSpeed * Time.deltaTime;
+			// transform.position += Vector3.back * moveSpeed * Time.deltaTime; // ""
+			transform.position -= transform.forward * moveSpeed * Time.deltaTime; // LOCAL Backward vector of GO
 		}
 
 		if (Input.GetKey("left"))	{
