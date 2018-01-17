@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpingForce: 300
+  jumpingForce: 500
 --- !u!23 &454288277
 MeshRenderer:
   m_ObjectHideFlags: 0

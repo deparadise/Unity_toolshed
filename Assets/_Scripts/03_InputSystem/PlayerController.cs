@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 	public float moveSpeed = 5f;
-	public float jumpingForce = 10f;
-
+	public float jumpingForce = 400f;
+	public bool canJump = false;
 	// Use this for initialization
 	void Start () {
 
@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown("space")) {
-			// JUMP
+		if (Input.GetKeyDown("space") && canJump) {
+			canJump = false;
 			GetComponent<Rigidbody>().AddForce(0 , jumpingForce, 0);
 		}
 
@@ -24,6 +24,12 @@ public class PlayerController : MonoBehaviour {
 
 		if (Input.GetKey("right")) {
 			//
+		}
+	}
+
+	void OnCollisionEnter (Collision collided) {
+		if(collided.transform.name == "Floor") {
+			canJump = true;
 		}
 	}
 }
