@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 	public float moveSpeed = 5f;
+	public float rotateSpeed = 60f;
 	public float jumpingForce = 400f;
 	public bool canJump = false;
 	// Use this for initialization
@@ -36,6 +37,16 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKey("right")) {
 			// strafe R
 			transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+		}
+
+		if (Input.GetKey("q")) {
+			// rotate L
+			transform.RotateAround(transform.position, Vector3.up, -rotateSpeed * Time.deltaTime);
+		}
+
+		if (Input.GetKey("e")) {
+			// rotate L
+			transform.RotateAround(transform.position, Vector3.up, rotateSpeed * Time.deltaTime);
 		}
 	}
 
