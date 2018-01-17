@@ -18,12 +18,24 @@ public class PlayerController : MonoBehaviour {
 			GetComponent<Rigidbody>().AddForce(0 , jumpingForce, 0);
 		}
 
+		if (Input.GetKey("up")) {
+			// advance
+			transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
+		}
+
+		if (Input.GetKey("down")) {
+			// withdraw
+			transform.position += Vector3.back * moveSpeed * Time.deltaTime;
+		}
+
 		if (Input.GetKey("left"))	{
-			//
+			// strafe L
+			transform.position += Vector3.left * moveSpeed * Time.deltaTime;
 		}
 
 		if (Input.GetKey("right")) {
-			//
+			// strafe R
+			transform.position += Vector3.right * moveSpeed * Time.deltaTime;
 		}
 	}
 
